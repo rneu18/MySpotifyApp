@@ -141,7 +141,7 @@ public class Result {
         this.trackId = trackId;
     }
 
-    public String getArtistName() {
+    public  String getArtistName() {
         return artistName;
     }
 

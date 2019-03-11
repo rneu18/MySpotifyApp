@@ -18,6 +18,8 @@ public class SongsDescription {
         return resultCount;
     }
 
+
+
     public void setResultCount(Integer resultCount) {
         this.resultCount = resultCount;
     }
