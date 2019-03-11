@@ -84,7 +84,12 @@ public class RockFragment extends Fragment {
 
                 } catch(Exception e){
 
-                    track_price.add("0");
+                    track_price.add("");
+                    artist_name.add("");
+                    song_pic.add("");
+                    collection_name.add("");
+                    art_work_url.add("");
+
 
                 }
 

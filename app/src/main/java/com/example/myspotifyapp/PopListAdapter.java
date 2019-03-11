@@ -52,10 +52,10 @@ public class PopListAdapter extends RecyclerView.Adapter {
 
             artist_name.setText(PopFragment.artist_name.get(i));
             collection_name.setText(PopFragment.collection_name.get(i));
-            song_url.setText(PopFragment.art_work_url.get(i));
+            song_url.setText("");
 
             //track_price.setText("123");
-            track_price.setText(PopFragment.track_price.get(i));
+            track_price.setText(PopFragment.track_price.get(i)+ " USD");
           //  song_image.setImageResource(R.drawable.home);
             Picasso.with(itemView.getContext()).load(PopFragment.song_pic.get(i)).into(song_image);
 

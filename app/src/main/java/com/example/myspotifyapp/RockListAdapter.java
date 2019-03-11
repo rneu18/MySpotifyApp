@@ -49,7 +49,7 @@ public class RockListAdapter extends RecyclerView.Adapter {
 
             artist_name.setText(RockFragment.artist_name.get(i));
             collection_name.setText(RockFragment.collection_name.get(i));
-            song_url.setText(RockFragment.art_work_url.get(i));
+            song_url.setText("");
 
             //track_price.setText("123");
             track_price.setText(RockFragment.track_price.get(i)+ " USD");

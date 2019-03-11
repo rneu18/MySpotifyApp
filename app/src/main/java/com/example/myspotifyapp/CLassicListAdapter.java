@@ -50,11 +50,22 @@ public class CLassicListAdapter extends RecyclerView.Adapter {
 
             artist_name.setText(ClassicFragment.artist_name.get(i));
             collection_name.setText(ClassicFragment.collection_name.get(i));
-            song_url.setText(ClassicFragment.art_work_url.get(i));
+           // Picasso.with(itemView.getContext()).load(ClassicFragment.song_pic.get(i)).into(song_image);
+            imageUri = ClassicFragment.song_pic.get(i);
+            song_url.setText("");
+
 
             //track_price.setText("123");
-            track_price.setText(ClassicFragment.track_price.get(i)+ " USD");
-            Picasso.with(itemView.getContext()).load(ClassicFragment.song_pic.get(i)).into(song_image);
+            try{
+                track_price.setText(ClassicFragment.track_price.get(i)+ " USD");
+
+            }
+            catch (Exception e){
+                track_price.setText("");
+
+            }
+
+
 
         }
         public void onClick(View view){
