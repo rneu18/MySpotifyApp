@@ -48,17 +48,35 @@ public class PopListAdapter extends RecyclerView.Adapter {
         }
 
         public  void bindView(int i) {
+            try{
+                track_price.setText(ClassicFragment.track_price.get(i)+ " USD");
+            }
+            catch (Exception e){
+                track_price.setText("");
+            }
+            try{
+                artist_name.setText(ClassicFragment.artist_name.get(i));
+            }
+            catch (Exception e){
+                artist_name.setText("");
+            }
+            try{
+                collection_name.setText(ClassicFragment.collection_name.get(i));
+            }
+            catch (Exception e){
+                collection_name.setText("");
+            }
 
+            try{
+                Picasso.with(itemView.getContext()).load(ClassicFragment.song_pic.get(i)).into(song_image);
+                imageUri = ClassicFragment.song_pic.get(i);
+                //  song_url.setText("");
 
-            artist_name.setText(PopFragment.artist_name.get(i));
-            collection_name.setText(PopFragment.collection_name.get(i));
-            song_url.setText("");
+            }
+            catch (Exception e){
+                imageUri = "";
 
-            //track_price.setText("123");
-            track_price.setText(PopFragment.track_price.get(i)+ " USD");
-          //  song_image.setImageResource(R.drawable.home);
-            Picasso.with(itemView.getContext()).load(PopFragment.song_pic.get(i)).into(song_image);
-
+            }
         }
         public void onClick(View view){
 

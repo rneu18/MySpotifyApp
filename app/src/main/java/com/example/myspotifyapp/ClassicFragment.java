@@ -70,38 +70,43 @@ public class ClassicFragment extends Fragment {
            // @Override
             public void onResponse(Call<SongsDescription> call, Response<SongsDescription> response) {
 
-
-
-                //tv_fact.setText(response.body().getText());
-                // tv_type.setText(response.body().getType());
-
                 result_count = response.body().getResultCount();
-
-
                 try {
                     for(int i=0; i<result_count; i++){
-
                         song_pic.add(response.body().getResults().get(i).getArtworkUrl60());
+                    }
+                } catch(Exception e){
+                    song_pic.add("");
+                }
+                try {
+                    for(int i=0; i<result_count; i++){
                         artist_name.add(response.body().getResults().get(i).getArtistName());
+                    }
+                } catch(Exception e){
+                    artist_name.add("");
+                }
+                try {
+                    for(int i=0; i<result_count; i++){
                         collection_name.add(response.body().getResults().get(i).getCollectionName());
+                    }
+                } catch(Exception e){
+                    collection_name.add("");
+                }
+                try {
+                    for(int i=0; i<result_count; i++){
                         art_work_url.add(response.body().getResults().get(i).getPreviewUrl());
+                    }
+                } catch(Exception e){
+                    art_work_url.add("");
+                }
+                try {
+                    for(int i=0; i<result_count; i++){
                         track_price.add(response.body().getResults().get(i).getTrackPrice().toString());
-
                     }
 
                 } catch(Exception e){
-
                     track_price.add("");
-                    artist_name.add("");
-                    song_pic.add("");
-                    collection_name.add("");
-                    art_work_url.add("");
-
-
                 }
-
-
-
                 recyclerView.setAdapter(CLassicListAdapter);
 
 

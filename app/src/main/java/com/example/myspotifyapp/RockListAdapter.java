@@ -31,7 +31,7 @@ public class RockListAdapter extends RecyclerView.Adapter {
 
     private class ListViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         private ImageView song_image;
-        private String imageUri;
+        public String imageUri;
         private TextView artist_name, collection_name, song_url, track_price;
 
         public ListViewHolder( View itemView) {
@@ -45,16 +45,35 @@ public class RockListAdapter extends RecyclerView.Adapter {
         }
 
         public  void bindView(int i) {
+            try{
+                track_price.setText(ClassicFragment.track_price.get(i)+ " USD");
+            }
+            catch (Exception e){
+                track_price.setText("");
+            }
+            try{
+                artist_name.setText(ClassicFragment.artist_name.get(i));
+            }
+            catch (Exception e){
+                artist_name.setText("");
+            }
+            try{
+                collection_name.setText(ClassicFragment.collection_name.get(i));
+            }
+            catch (Exception e){
+                collection_name.setText("");
+            }
 
+            try{
+                Picasso.with(itemView.getContext()).load(ClassicFragment.song_pic.get(i)).into(song_image);
+                imageUri = ClassicFragment.song_pic.get(i);
+                //  song_url.setText("");
 
-            artist_name.setText(RockFragment.artist_name.get(i));
-            collection_name.setText(RockFragment.collection_name.get(i));
-            song_url.setText("");
+            }
+            catch (Exception e){
+                imageUri = "";
 
-            //track_price.setText("123");
-            track_price.setText(RockFragment.track_price.get(i)+ " USD");
-            Picasso.with(itemView.getContext()).load(RockFragment.song_pic.get(i)).into(song_image);
-
+            }
         }
         public void onClick(View view){
 

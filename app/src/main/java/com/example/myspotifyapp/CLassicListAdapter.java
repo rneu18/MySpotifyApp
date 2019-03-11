@@ -39,34 +39,43 @@ public class CLassicListAdapter extends RecyclerView.Adapter {
             super(itemView);
             artist_name = (TextView) itemView.findViewById(R.id.artist_name);
             collection_name = (TextView) itemView.findViewById(R.id.collection_name);
-            song_url = (TextView) itemView.findViewById(R.id.artworkUrl);
+          //  song_url = (TextView) itemView.findViewById(R.id.artworkUrl);
             track_price = (TextView) itemView.findViewById(R.id.track_price);
             song_image = (ImageView) itemView.findViewById(R.id.songs_image);
+
             Picasso.with(itemView.getContext()).load(imageUri).into(song_image);
         }
 
         public  void bindView(int i) {
-
-
-            artist_name.setText(ClassicFragment.artist_name.get(i));
-            collection_name.setText(ClassicFragment.collection_name.get(i));
-           // Picasso.with(itemView.getContext()).load(ClassicFragment.song_pic.get(i)).into(song_image);
-            imageUri = ClassicFragment.song_pic.get(i);
-            song_url.setText("");
-
-
-            //track_price.setText("123");
             try{
                 track_price.setText(ClassicFragment.track_price.get(i)+ " USD");
-
             }
             catch (Exception e){
                 track_price.setText("");
-
+            }
+            try{
+                artist_name.setText(ClassicFragment.artist_name.get(i));
+            }
+            catch (Exception e){
+                artist_name.setText("");
+            }
+            try{
+                collection_name.setText(ClassicFragment.collection_name.get(i));
+            }
+            catch (Exception e){
+                collection_name.setText("");
             }
 
+            try{
+                Picasso.with(itemView.getContext()).load(ClassicFragment.song_pic.get(i)).into(song_image);
+                imageUri = ClassicFragment.song_pic.get(i);
+                //  song_url.setText("");
 
+            }
+            catch (Exception e){
+                imageUri = "";
 
+            }
         }
         public void onClick(View view){
 
