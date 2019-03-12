@@ -1,11 +1,10 @@
-package com.example.myspotifyapp;
+package com.example.myspotifyapp.model;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
-import retrofit2.http.Query;
 
-public interface ClassicInterfaceApi {
-    @GET("search?term=classic&amp;media=music&amp;entity=song&amp;limit=50")
+public interface RockInterfaceApi {
+    @GET("search?term=rock&amp;media=music&amp;entity=song&amp;limit=50")
     Call<SongsDescription> getRandomSongs();
     //https://cat-fact.herokuapp.com/facts/random
 

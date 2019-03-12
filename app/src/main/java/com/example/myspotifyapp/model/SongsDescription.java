@@ -1,7 +1,9 @@
-package com.example.myspotifyapp;
+package com.example.myspotifyapp.model;
 
 
 import java.util.List;
+
+import com.example.myspotifyapp.model.Result;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 

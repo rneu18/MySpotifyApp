@@ -1,6 +1,5 @@
 package com.example.myspotifyapp;
 
-import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,7 +14,7 @@ public class CLassicListAdapter extends RecyclerView.Adapter {
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int i) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_classic, parent, false);
         return new ListViewHolder(view);
     }
 
@@ -37,11 +36,11 @@ public class CLassicListAdapter extends RecyclerView.Adapter {
 
         public ListViewHolder( View itemView) {
             super(itemView);
-            artist_name = (TextView) itemView.findViewById(R.id.artist_name);
-            collection_name = (TextView) itemView.findViewById(R.id.collection_name);
-          //  song_url = (TextView) itemView.findViewById(R.id.artworkUrl);
-            track_price = (TextView) itemView.findViewById(R.id.track_price);
-            song_image = (ImageView) itemView.findViewById(R.id.songs_image);
+            artist_name = (TextView) itemView.findViewById(R.id.artist_name_classic);
+            collection_name = (TextView) itemView.findViewById(R.id.collection_name_classic);
+          //  song_url = (TextView) itemView.findViewById(R.id.artworkUrl_classic);
+            track_price = (TextView) itemView.findViewById(R.id.track_price_classic);
+            song_image = (ImageView) itemView.findViewById(R.id.songs_image_classic);
 
             Picasso.with(itemView.getContext()).load(imageUri).into(song_image);
         }

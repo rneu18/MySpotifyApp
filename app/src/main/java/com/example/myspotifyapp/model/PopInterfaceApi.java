@@ -1,4 +1,4 @@
-package com.example.myspotifyapp;
+package com.example.myspotifyapp.model;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

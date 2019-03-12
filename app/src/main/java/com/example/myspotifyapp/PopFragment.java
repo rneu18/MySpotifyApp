@@ -9,6 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.example.myspotifyapp.model.PopInterfaceApi;
+import com.example.myspotifyapp.model.SongsDescription;
+
 import java.util.ArrayList;
 
 import retrofit2.Call;

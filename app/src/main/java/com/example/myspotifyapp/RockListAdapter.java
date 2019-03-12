@@ -14,7 +14,7 @@ public class RockListAdapter extends RecyclerView.Adapter {
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int i) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_rock, parent, false);
         return new ListViewHolder(view);
     }
 
@@ -46,27 +46,27 @@ public class RockListAdapter extends RecyclerView.Adapter {
 
         public  void bindView(int i) {
             try{
-                track_price.setText(ClassicFragment.track_price.get(i)+ " USD");
+                track_price.setText(RockFragment.track_price.get(i)+ " USD");
             }
             catch (Exception e){
                 track_price.setText("");
             }
             try{
-                artist_name.setText(ClassicFragment.artist_name.get(i));
+                artist_name.setText(RockFragment.artist_name.get(i));
             }
             catch (Exception e){
                 artist_name.setText("");
             }
             try{
-                collection_name.setText(ClassicFragment.collection_name.get(i));
+                collection_name.setText(RockFragment.collection_name.get(i));
             }
             catch (Exception e){
                 collection_name.setText("");
             }
 
             try{
-                Picasso.with(itemView.getContext()).load(ClassicFragment.song_pic.get(i)).into(song_image);
-                imageUri = ClassicFragment.song_pic.get(i);
+                Picasso.with(itemView.getContext()).load(RockFragment.song_pic.get(i)).into(song_image);
+                imageUri = RockFragment.song_pic.get(i);
                 //  song_url.setText("");
 
             }

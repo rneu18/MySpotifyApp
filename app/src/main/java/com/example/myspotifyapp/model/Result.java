@@ -1,4 +1,4 @@
-package com.example.myspotifyapp;
+package com.example.myspotifyapp.model;
 
 
 import com.google.gson.annotations.Expose;

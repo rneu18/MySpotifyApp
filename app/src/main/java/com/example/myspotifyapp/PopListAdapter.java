@@ -14,7 +14,7 @@ public class PopListAdapter extends RecyclerView.Adapter {
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int i) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_pop, parent, false);
         return new ListViewHolder(view);
     }
 
@@ -37,11 +37,11 @@ public class PopListAdapter extends RecyclerView.Adapter {
 
         public ListViewHolder( View itemView) {
             super(itemView);
-            artist_name = (TextView) itemView.findViewById(R.id.artist_name);
-            collection_name = (TextView) itemView.findViewById(R.id.collection_name);
-            song_url = (TextView) itemView.findViewById(R.id.artworkUrl);
-            track_price = (TextView) itemView.findViewById(R.id.track_price);
-            song_image = (ImageView) itemView.findViewById(R.id.songs_image);
+            artist_name = (TextView) itemView.findViewById(R.id.artist_name_pop);
+            collection_name = (TextView) itemView.findViewById(R.id.collection_name_pop);
+            song_url = (TextView) itemView.findViewById(R.id.artworkUrl_pop);
+            track_price = (TextView) itemView.findViewById(R.id.track_price_pop);
+            song_image = (ImageView) itemView.findViewById(R.id.songs_image_pop);
 
             Picasso.with(itemView.getContext()).load(imageUri).into(song_image);
 
@@ -49,27 +49,28 @@ public class PopListAdapter extends RecyclerView.Adapter {
 
         public  void bindView(int i) {
             try{
-                track_price.setText(ClassicFragment.track_price.get(i)+ " USD");
+                track_price.setText(PopFragment.track_price.get(i)+ " USD");
+               // track_price.setText(ClassicFragment.track_price.get(i)+ " USD");
             }
             catch (Exception e){
                 track_price.setText("");
             }
             try{
-                artist_name.setText(ClassicFragment.artist_name.get(i));
+                artist_name.setText(PopFragment.artist_name.get(i));
             }
             catch (Exception e){
                 artist_name.setText("");
             }
             try{
-                collection_name.setText(ClassicFragment.collection_name.get(i));
+                collection_name.setText(PopFragment.collection_name.get(i));
             }
             catch (Exception e){
                 collection_name.setText("");
             }
 
             try{
-                Picasso.with(itemView.getContext()).load(ClassicFragment.song_pic.get(i)).into(song_image);
-                imageUri = ClassicFragment.song_pic.get(i);
+                Picasso.with(itemView.getContext()).load(PopFragment.song_pic.get(i)).into(song_image);
+                imageUri = PopFragment.song_pic.get(i);
                 //  song_url.setText("");
 
             }

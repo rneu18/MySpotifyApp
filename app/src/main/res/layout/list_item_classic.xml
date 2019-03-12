@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/songs_image_classic"
+        android:layout_width="80dp"
+        android:layout_height="60dp"
+        android:layout_margin="8dp"
+
+
+
+        android:scaleType="fitCenter" />
+    <android.support.v7.widget.LinearLayoutCompat
+        android:id="@+id/song_descriptions_classic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="8dp">
+        <TextView
+            android:id="@+id/artist_name_classic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/collection_name_classic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/track_price_classic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/artworkUrl_classic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorWhite"/>
+
+
+    </android.support.v7.widget.LinearLayoutCompat>
+
+
+</LinearLayout>
