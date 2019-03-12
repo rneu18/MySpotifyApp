@@ -1,5 +1,6 @@
 package com.example.myspotifyapp;
 
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,7 +15,7 @@ public class PopListAdapter extends RecyclerView.Adapter {
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int i) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_pop, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item, parent, false);
         return new ListViewHolder(view);
     }
 
@@ -32,23 +33,26 @@ public class PopListAdapter extends RecyclerView.Adapter {
     private class ListViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         private ImageView song_image;
         private String imageUri;
+        CardView cv;
 
         private TextView artist_name, collection_name, song_url, track_price;
 
         public ListViewHolder( View itemView) {
             super(itemView);
-            artist_name = (TextView) itemView.findViewById(R.id.artist_name_pop);
-            collection_name = (TextView) itemView.findViewById(R.id.collection_name_pop);
-            song_url = (TextView) itemView.findViewById(R.id.artworkUrl_pop);
-            track_price = (TextView) itemView.findViewById(R.id.track_price_pop);
-            song_image = (ImageView) itemView.findViewById(R.id.songs_image_pop);
+            artist_name = (TextView) itemView.findViewById(R.id.artist_name);
+            collection_name = (TextView) itemView.findViewById(R.id.collection_name);
+           // song_url = (TextView) itemView.findViewById(R.id.artworkUrl);
+            track_price = (TextView) itemView.findViewById(R.id.track_price);
+            song_image = (ImageView) itemView.findViewById(R.id.songs_image);
 
             Picasso.with(itemView.getContext()).load(imageUri).into(song_image);
+            cv = (CardView)itemView.findViewById(R.id.cv);
 
         }
 
         public  void bindView(int i) {
             try{
+
                 track_price.setText(PopFragment.track_price.get(i)+ " USD");
                // track_price.setText(ClassicFragment.track_price.get(i)+ " USD");
             }

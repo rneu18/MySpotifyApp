@@ -2,6 +2,7 @@ package com.example.myspotifyapp;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -25,9 +26,6 @@ import static android.widget.Toast.LENGTH_SHORT;
 
 public class ClassicFragment extends Fragment {
 
-
-
-
     static ArrayList<String> artist_name = new ArrayList<>();
     static ArrayList<String> song_pic = new ArrayList<>();
     static ArrayList<String> collection_name = new ArrayList<>();
@@ -36,17 +34,14 @@ public class ClassicFragment extends Fragment {
 
 
     RecyclerView recyclerView;
-    com.example.myspotifyapp.CLassicListAdapter CLassicListAdapter;
+    CLassicListAdapter CLassicListAdapter;
 
     static int result_count;
     String Base_Url = "https://itunes.apple.com/";
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-
-
         View view = inflater.inflate(R.layout.fragment_classic, container, false);
-
 
         initializedRetrofit();
 
@@ -56,6 +51,7 @@ public class ClassicFragment extends Fragment {
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
+
         return view;
     }
 
