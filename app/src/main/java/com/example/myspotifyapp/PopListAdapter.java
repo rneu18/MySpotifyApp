@@ -52,9 +52,15 @@ public class PopListAdapter extends RecyclerView.Adapter {
 
         public  void bindView(int i) {
             try{
+                Double price = Double.parseDouble(PopFragment.track_price.get(i));
+                if(price > 0){
+                    track_price.setText(PopFragment.track_price.get(i)+ " USD");
 
-                track_price.setText(PopFragment.track_price.get(i)+ " USD");
-               // track_price.setText(ClassicFragment.track_price.get(i)+ " USD");
+                }else{
+                    track_price.setText("");
+
+                }
+
             }
             catch (Exception e){
                 track_price.setText("");

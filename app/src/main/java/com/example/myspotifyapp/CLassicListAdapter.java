@@ -50,7 +50,15 @@ public class CLassicListAdapter extends RecyclerView.Adapter {
 
         public  void bindView(int i) {
             try{
-                track_price.setText(ClassicFragment.track_price.get(i)+ " USD");
+                Double price = Double.parseDouble(ClassicFragment.track_price.get(i));
+                if(price > 0){
+                    track_price.setText(ClassicFragment.track_price.get(i)+ " USD");
+
+                }else{
+                    track_price.setText("");
+
+                }
+
             }
             catch (Exception e){
                 track_price.setText("");

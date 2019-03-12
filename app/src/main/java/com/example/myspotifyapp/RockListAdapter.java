@@ -49,7 +49,15 @@ public class RockListAdapter extends RecyclerView.Adapter {
 
         public  void bindView(int i) {
             try{
-                track_price.setText(RockFragment.track_price.get(i)+ " USD");
+                Double price = Double.parseDouble(RockFragment.track_price.get(i));
+                if(price > 0){
+                    track_price.setText(RockFragment.track_price.get(i)+ " USD");
+
+                }else{
+                    track_price.setText("");
+
+                }
+
             }
             catch (Exception e){
                 track_price.setText("");

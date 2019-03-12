@@ -100,7 +100,13 @@ public class ClassicFragment extends Fragment {
                 }
                 try {
                     for(int i=0; i<result_count; i++){
-                        track_price.add(response.body().getResults().get(i).getTrackPrice().toString());
+                        Double price = response.body().getResults().get(i).getTrackPrice();
+                        if (price >= 0){
+                            track_price.add(response.body().getResults().get(i).getTrackPrice().toString());
+                        }else{
+                            track_price.add("");
+                        }
+
                     }
 
                 } catch(Exception e){
